@@ -1,0 +1,32 @@
+<fieldset>
+	<legend>
+		Olvide contraseña
+	</legend>
+	<%=form_for :olvide, :url => {:controller => "users", :action => "enviarc"} do |x|%>
+		<div class="row">
+			<div class="large-12 columns left">
+				<label>Correo electronico</label>
+				<%=x.text_field :email%>
+			</div>
+
+			
+				
+			</div>
+
+			<div class="row">
+				<div class="large-12 columns left">
+				<center>
+				<%=recaptcha_tags%>
+				</center>
+					
+				</div>
+
+			<div class="large-12 columns left">
+				<%=x.submit "Enviar", :class => "medium button"%>
+				<%=link_to "Salir",home_path, {:class => "button back"}%>
+				
+			</div>
+			
+		</div>
+	<%end%>
+</fieldset>

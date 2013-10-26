@@ -1,0 +1,57 @@
+<%=form_for @comunals do |x|%>
+<div class="row">
+	<div class="large-6 columns left">
+		<label>Nombre del consejo comunal</label>
+		<%=x.text_field :nombrec%>
+	</div>
+
+<div class="large-6 columns left">
+			<label>
+				Direcciòn
+			</label>
+			<%=x.text_field :direccion%>
+
+		</div>
+
+</div>
+
+<div class="row">
+	<div class="large-6 columns left">
+		<label>Vocero</label>
+		<%=x.text_field :vocero%>
+	</div>
+
+<div class="large-6 columns left">
+			<label>
+				Telefono
+			</label>
+			<%=x.text_field :telefono%>
+
+		</div>
+
+</div>
+
+<div class="row">
+	<div class="large-6 columns left">
+		<label>Correo electronico</label>
+		<%=x.email_field :correo%>
+
+	</div>
+
+	<div class="large-6 columns left">
+		<label>Eje territorial</label>
+		<%=x.text_field :ejet%>
+
+	</div>
+
+</div>
+
+<div class="row">
+	<div class="large-12 columns">
+		<%=x.submit @title, :class => "large-3 small-12 button  right"%>
+		<%=link_to "Salir",home_path, {:class => "button  back right"}%>
+
+	</div>
+</div>
+
+<%end%>

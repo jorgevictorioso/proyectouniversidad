@@ -1,0 +1,48 @@
+
+
+<div class="panel">
+	
+<table>
+<thead>
+	<tr>
+		<td>Prioridad</td>
+		<td width="630">Descripcion</td>
+		<td>Estado</td>
+		<td>Editar</td>
+		<td>Eliminar</td>
+	</tr>
+</thead>
+<tbody>
+ <%@n.each do |x|%>
+	<tr>
+		<td><%=x.prioridad%></td>
+		<td><%=x.description%></td>
+		<td><%=verstatus(x.proceso)%></td>
+		<td>
+		<%if x.proceso == nil%>
+		<%=link_to "Editar",edit_necesidade_path(x), {:class => "button tiny success"}%>
+		<%end%>
+		</td>
+		<td>
+		<%if x.proceso == nil%>
+		<%=link_to "Eliminar",x, {:method => "delete",:class => "button tiny alert", :confirm => "estas seguro que deseas eliminar esta necesidad"}%>
+		<%end%>
+		</td>
+	</tr>
+	<%end%>
+</tbody>
+</table>
+
+
+
+</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<%=link_to "Salir",home_path, {:class => "large-3 button right"}%>
+			<%=link_to "Registrar",new_necesidade_path, {:class => "large-3 button  right"}%>
+
+
+
+		</div>
+
+	</div>

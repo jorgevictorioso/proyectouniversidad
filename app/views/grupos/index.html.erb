@@ -1,0 +1,64 @@
+
+<div class="panel success alert">
+<div class="row">
+	<div class="large-12 columns left title">
+        Grupo <h2></h2>
+	</div>
+
+</div>
+
+<div class="row">
+
+	<div class="large-6 columns subpage">
+		<label>Lider del grupo:  </label> <span><%=@x.nombre%></span>
+		<label>Cedula: </label> <span><%=@x.ci%></span>
+		<label>Profesor: </label> <span><%=get_name(@x.profesore_id)%></span>
+		<label>Institucion: </label> <span><%=get_insti(@x.institucione_id)%></span>
+
+		<label>Nombre del proyecto: </label> <span> <%=@x.nombrep%> </span> <%=link_to("Cambiar nombre", "grupos/#{@x.id}/edit?nombre=1", :class => "tiny button") unless @x.nombrep.blank? %>
+
+		<%=link_to("Asignar nombre", "grupos/#{@x.id}/edit?nombre=1", :class => "tiny button") if @x.nombrep.blank? %>
+		
+	</div>
+
+	<div class="large-6 columns subpage" style ="background-color:#136DBD;">
+		<%= link_to 'Nuevo alumno', new_alumno_path, {:class => "button success"}%>
+		<table>
+			<thead>
+				<tr>
+					<td class="large-5">Nombre</td>
+					<td class="large-5">Apellido</td>
+					<td>Editar</td>
+					<td>Eliminar</td>
+				</tr>
+			</thead>
+			<tbody>
+				<%@alumno.each do |x|%>
+				<tr>
+					<td><%=x.nombre%></td>
+					<td><%=x.apellido%></td>
+					 <td><%= link_to 'EDITAR', edit_alumno_path(x),{:class => "button success tiny"} %></td>
+        <td><%= link_to 'Eliminar', x, {method: :delete, :class => "button tiny alert", :confirm => "estas seguro"} %></td>
+				</tr>
+				<%end%>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<%=link_to "Editar grupo",edit_grupo_path(@x.id),{:class => "large-12 button", :style => "margin:0px;"}%>
+			 <%=link_to "Salir",home_path, {:class => "large-12 button back large-centered"}%>
+			
+		</div>
+
+	</div>
+
+	
+
+</div>
+
+
+
+</div>
+</div>

@@ -1,0 +1,33 @@
+<div class="panel">
+  <table>
+    <thead>
+      <tr>
+        <td width="300">Lider del grupo</td>
+        <td width="200">Cedula</td>
+        <td width="200">Institucion</td>
+        <tdwidth="200"> </td>
+      </tr>
+    </thead>
+    <tbody>
+    <%@lista.each do |x|%>
+      <tr>
+        <td><%=x.nombre%></td>
+        <td><%=x.ci%></td>
+        <td>
+        <%=get_insti(x.institucione_id)%></td>
+        <td><%=link_to "Ver Proyecto",ver_proyecto_profesores_path(x), {:class => "button success"}%></td>
+      </tr>
+      <%end%>
+    </tbody>
+  </table>
+  <div class="row">
+      
+        
+        <%=link_to "Salir",home_path, {:class => "large-3 button right", :style => "margin:15px;"}%>
+
+
+      </div>
+
+    </div>
+
+</div>

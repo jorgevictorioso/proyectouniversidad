@@ -1,0 +1,6 @@
+<%=form_for :status, :html => {:class => "custom"}, :url => registrar_profesores_path(params[:id]) do |x|%>
+
+<%=x.select :proceso, [["Diseño",1],["Ejecuciòn",2],["Implementado",3]]%>
+
+<%=x.submit "Cambiar status", :class => "button large-12"%>
+<%end%>

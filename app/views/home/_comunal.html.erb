@@ -1,0 +1,61 @@
+<section class="" id="modules">
+  
+    <div class="row">
+     
+   <%=link_to(comunals_path) do%>
+        <article class="large-4 columns left">
+            <img src="/image/category/consejo.png">
+            <label>Mi consejo comunal</label>
+
+        </article>
+
+        <%end%>
+
+    
+
+         <article  class="large-4 columns left">
+            <img src="/image/category/comunal.png" data-dropdown="menu1">
+            <label>Necesidades</label>
+
+        </article>
+
+        <ul id="menu1" class="f-dropdown" data-dropdown-content>
+  <li><%=link_to "Registrar necesidad", new_necesidade_path,{:style => "text-align:center; font-size:20px;"}%></li>
+     <li><%=link_to "Ver necesidad", necesidades_path,{:style => "text-align:center; font-size:20px;"}%></li>
+</ul>
+
+     
+
+   
+
+        <article class="large-4 columns left">
+            <img src="/image/category/6.png">
+            <label>Ayuda</label>
+
+        </article>
+ </div>
+
+
+ <div class="row">
+     <%=link_to(logout_authentications_path,:method => :delete) do%>
+        <article class="large-4 columns right">
+            <img src="/image/category/4.png">
+            <label>Salir</label>
+
+        </article>
+
+        <%end%>
+          <div >
+        <br><br><br><br><br>
+             <article >
+            <li style="float:right; color:white; font-size:30px;"> <label class="texrl" style="padding:8px;">MODULO: CONCEJO COMUNAL</label> </li>
+
+        </article>
+
+
+ </div>
+
+
+
+
+</section>

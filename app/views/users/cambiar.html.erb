@@ -1,0 +1,21 @@
+<fieldset>
+	<legend>Nueva contraseña</legend>
+	<%=form_for :change, :url => "/cambiarcontra/#{params[:pass]}/#{params[:id]}" do |x|%>
+	<div class="row">
+		<div class="large-12 columns left">
+			<%=x.password_field :password%>
+			
+		</div>
+		
+	</div>
+
+	<div class="row">
+	<div class="large-12 columns left">
+		<%=x.submit "Cambiar contraseña", :class => "large-12 button"%>
+		
+	</div>
+		
+	</div>
+
+	<%end%>
+</fieldset>

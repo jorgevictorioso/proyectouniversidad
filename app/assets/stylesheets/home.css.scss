@@ -1,0 +1,80 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+*{
+    font-family: 'Ubuntu Condensed', sans-serif;
+   
+}
+
+input[type=text],input[type=password],input[type=email]{
+       font-size:20px;
+       border-radius:10px;
+    }
+label{
+    font-size:17px;
+}
+
+body{
+   background: -webkit-linear-gradient(right,#2E94DB 30%,#0069AE 50%);
+   background: -moz-linear-gradient(right,#2E94DB 30%,#0069AE 50%);
+   background: -ms-linear-gradient(right,#2E94DB 30%,#0069AE 50%);
+   background: linear-gradient(right,#2E94DB 30%,#0069AE 50%);
+}
+
+article{
+   
+}
+
+.body{
+    border-radius:6px 10px 6px;
+    margin:2px;
+    padding:10px;
+    border:solid 3px #59B1CF;
+    background-color:white;
+}
+
+#modules{
+    article{
+    border-radius:6px 10px 6px;
+    text-align:center;
+    background-color:rgba(0,0,0,0.04);  
+    -webkit-animation:bounceIn 2s;
+    -moz-animation:bounceIn 2s;
+    -o-animation:bounceIn 2s;
+    -ms-animation:bounceIn 2s;
+
+    &:hover{
+        background-color:rgba(0,0,0,0.1); 
+        cursor:pointer;
+    }
+
+    &:active{
+        margin-top:2px;
+    }
+
+    label{
+        font-size:22px;
+    }
+    }
+
+}
+
+
+//reponsin desing
+
+@media (max-width:930px){
+    #modules article{
+        text-align:left;
+        img{
+            display:inline-block;
+            vertical-align:middle;
+        }
+
+        label{
+            display: inline-block;
+            font-size:20px;
+        }
+    }
+
+}

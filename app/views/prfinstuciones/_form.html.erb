@@ -1,0 +1,19 @@
+<div class="row">
+
+<%=form_for @prfinstuciones, :html => {:class => "custom"} do |x|%>
+<div class="large-12 columns left">
+	<label>Institucion</label>
+	<%=x.collection_select :institucione_id, Institucione.all,:id,:nombre%>
+
+</div>
+
+<div class="large-12 columns left">
+	<%=x.submit "Registrar", :class => "button large-12"%>
+	<%=link_to "Salir",home_path, {:class => "large-12 button"}%>
+
+</div>
+
+<%end%>
+
+
+</div>

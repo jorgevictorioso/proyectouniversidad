@@ -1,0 +1,68 @@
+<div class="panel">
+<div class="row">
+	<div class="large-3 columns left">
+	<label>Categoria</label>
+	<select id="categorias">
+		<option>Academico</option>
+		<option>Cultural</option>
+		<option>Deporte</option>
+		<option>Infrestuctura</option>
+		<option>Social</option>
+		<option>Servicios Publicos</option>
+	</select>
+		
+	</div>
+
+		<div class="large-3 columns left">
+	<label>Prioridad</label>
+	<select id="prioridad">
+		
+		<option>Alta</option>
+		<option>Media</option>
+		<option>Baja</option>
+	</select>
+		
+	</div>
+	
+</div>
+	<table>
+			<thead>
+				<td>
+					Categoria
+				</td>
+				<td width="450">
+					Descripciòn
+				</td>
+				<td>
+					Prioridad
+				</td>
+				<td>Informacion</td>
+				<td></td>
+			</thead>
+			<%@necesidades.each do |x|%>
+
+			<tbody>
+			
+				<td><%=x.categoria%></td>
+				<td><%=x.description%></td>
+				<td><%=x.prioridad%></td>
+				<td><a target="_blank" href="/pdf/<%=x.id%>.pdf" class="button">Ver</a></td>
+				<td><%=link_to "Elegir Proyecto", elegir_proyecto_path(@x.id,x), {:class => "button success", :confirm => "Estas seguro"}%></td>
+
+			</tbody>
+			<%end%>
+
+	</table>
+
+
+
+		
+</div>
+<div class="row">
+		
+			 <%=link_to "Salir",home_path, {:class => "button right", :style => "margin:15px;"}%>
+			
+
+
+	</div>
+	

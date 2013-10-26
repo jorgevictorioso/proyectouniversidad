@@ -1,0 +1,98 @@
+<%=form_for @users, :html => {:class => ""} do |x|%>
+<fieldset>
+<legend><h3>Registro</h3></legend>
+<div class="row">
+<div class="large-6 columns left">
+	<label>Nombre</label>
+	<%=x.text_field :nombre%>
+</div>
+
+<div class="large-6 columns left">
+	<label>Apellido</label>
+	<%=x.text_field :apellido%>
+</div>
+
+</div>
+
+
+
+<div class="row">
+	<div class="large-6 columns left">
+		<label>Cedula</label>
+		<%=x.text_field :dni%>
+
+	</div>
+
+		<div class="large-6 columns left">
+		<label>Telefono</label>
+		<%=x.text_field :telf%>
+
+	</div>
+
+</div>
+
+
+<div class="row">
+	<div class="large-6 columns left">
+		<label>Usuario</label>
+		<%=x.text_field :username%>
+
+	</div>
+
+		<div class="large-6 columns left">
+		<label>Correo electronico</label>
+		<%=x.email_field :email%>
+
+	</div>
+
+</div>
+
+<div class="row">
+	<div class="large-6 columns left">
+		<label>Contraseña</label>
+		<%=x.password_field :password, :onkeyup => "document.getElementById('confir').pattern = this.value"%>
+
+	</div>
+
+	<div class="large-6 columns left">
+		<label>Confirmar contraseña</label>
+		<input type="password" id="confir" required>
+
+	</div>
+
+</div>
+
+
+
+
+
+	<div class="row">
+		<div class="large-6 columns left">
+			<label>Seleccione</label>
+			<label> <%=x.radio_button :rol,1, :required => "true", :class => ""%> <span>Consejo comunal</span></label>
+			<label> <%=x.radio_button :rol,2, :required => "true"%> <span>Estudiante</span></label>
+			<label> <%=x.radio_button :rol,3, :required => "true"%> <span>Profesor</span></label>
+		
+		</div>
+
+		<div class="large-6 columns left">
+			<%=recaptcha_tags%>
+			
+		</div>
+
+	</div>
+
+<div class="row">
+
+	<div class="large-6 columns left"> 
+		<%=x.submit 'Registrar', :class => "button"%>
+		 <%=link_to "Cancelar",home_path, {:class => "button back"}%>
+	</div>
+
+</div>
+
+
+
+		
+<%end%>
+</fieldset>

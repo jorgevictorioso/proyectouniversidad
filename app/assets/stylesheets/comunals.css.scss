@@ -1,0 +1,43 @@
+// Place all the styles related to the comunals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.title{
+	background-color:#5C8FC2;
+	padding:12px;
+	color:white;
+	font-weight:bold;
+	font-size:20px;
+	display:inline-block;
+	h2{
+		display:inline-block;
+		font-size:23px;
+		text-decoration:underline;
+		color:#333;
+		margin:5px;
+	}
+}
+
+.subpage{
+	background-color:#729AA8;
+	padding:12px;
+	label{
+		color:white;
+		font-size:18px;
+		margin:5px;
+		&+span{
+			color:white;
+			font-weight:bold;
+			margin:5px;
+			font-size:21px;
+		}
+	}
+	min-height:280px;
+}
+
+.options{
+	padding:12px;
+	background-color:#086DCC;
+	color:white;
+	min-height:280px;
+
+}

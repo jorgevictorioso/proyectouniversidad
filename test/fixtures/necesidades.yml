@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  categoria: MyString
+  prioridad: MyString
+  description: MyText
+  fecha: 2013-10-05
+  proceso: 1
+  comunal_id: 1
+
+two:
+  categoria: MyString
+  prioridad: MyString
+  description: MyText
+  fecha: 2013-10-05
+  proceso: 1
+  comunal_id: 1

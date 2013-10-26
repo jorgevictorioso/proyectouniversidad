@@ -1,0 +1,8 @@
+
+<%if session[:login]%>
+login
+<%=link_to "close",logout_authentications_path, method: :delete %>
+<%else%>
+no-login
+<%=link_to "nuevo",new_authentication_path%>
+<%end%>

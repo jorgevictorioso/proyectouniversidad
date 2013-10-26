@@ -1,0 +1,69 @@
+<div class="panel">
+<div class="row">
+  <div class="large-12 columns left title">
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-6 columns subpage">
+    <label>Lider del grupo:</label>
+    <span><%=@g.nombre%></span>
+    <label>Cedula:</label>
+    <span><%=@g.ci%></span>
+    <label>Institucion</label>
+    <span><%=get_insti(@g.institucione_id)%></td></span>
+  <%if @n.present?%>
+    <label>Consejo comunal</label>
+
+    <span><%=vercomunal(@n.comunal_id)%></span>
+    <label>Estado</label>
+    <span><%=verstatus(@n.proceso)%></span>
+     <%end%>
+
+   
+    <br><br>
+    <div class="row">
+    <%if @n.present?%>
+    <div class="large-12 columns">
+    <%=link_to "Cambiar status",cambiar_status_profesores_path(@n.id),{:class => "button"}%>
+    <%=link_to "Aplazar",reprobar_profesores_path(params[:id]),{:class => "button alert"}%>
+    <%=link_to "Aprobar",aprobar_profesores_path(params[:id]),{:class => "button success"}%>
+    </div>
+    <%end%>
+
+      
+    </div>
+  </div>
+
+    <div class="large-6 columns title">
+    Alumnos en el grupo<br>
+    <table>
+      <thead>
+        <tr>
+          <td width="200">Nombre</td>
+          <td width="200">Apellido</td>
+          <td>Cedula</td>
+        </tr>
+    
+      </thead>
+
+      <tbody>
+      <%@l.each do |x|%>
+      <tr>
+        <td><%=x.nombre%></td>
+        <td><%=x.apellido%></td>
+        <td><%=x.cedula%></td>
+      </tr>
+
+      <%end%>
+
+        
+      </tbody>
+    </table>
+  </div>
+  
+  
+</div>
+</div>
+
+ <%=link_to "Salir",home_path, {:class => "large-3 button right", :style => "margin:5px;"}%>

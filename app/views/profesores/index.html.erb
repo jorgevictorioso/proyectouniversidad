@@ -1,0 +1,61 @@
+<div class="panel">
+	<div class="row">
+		<div class="large-12 columns title">
+			Bienvenido: <%="#{session[:nombre]} #{session[:apellido]}"%>
+		</div>
+		<div class="large-12 columns subpage">
+			<div class="panel" style="background-color:#B5C0C9;">
+			
+			<div class="row">
+				<label style="color:#716D6D;">Tus instituciones</label>
+				
+				<div class="large-12 columns title" style="padding:2px; text-align:center; background-color:#1E3572; border-bottom:solid 1px rgba(255,255,255,0.2);">
+					<table>
+						<thead>
+							<tr>
+								<td width="800">Instituciòn</td>
+								<td width="100"></td>
+								<td width="100"></td>
+							</tr>
+						</thead>
+						<tbody>
+							<%@x.each do |x|%>
+							<tr>
+                            	<td>
+                            		<%=leerins(x.institucione_id)%>
+                            	</td>
+                            	<td>
+                            		<%=link_to "Eliminar",x,{:method => :delete, :confirm => "Estas Seguro", :class => "tiny button alert"}%>
+                            	</td>
+
+                            	<td>
+                            		<%=link_to "Editar",edit_prfinstucione_path(x),{:class => "tiny button success"}%>
+                            	</td>
+							</tr>
+						</tbody>
+				<%end%>
+					</table>
+					
+					
+					
+				</div>
+
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="large-12 columns">
+				<%=link_to "Registrar nueva institucion",new_prfinstucione_path,{:class => "button  right"}%>
+				<%=link_to "Salir",home_path, {:class => "large-3 button right"}%>
+
+
+			</div>
+
+		</div>
+
+		
+		</div>
+
+
+	</div>
+</div>

@@ -1,0 +1,31 @@
+
+<div class="panel success alert">
+<div class="row">
+	<div class="large-12 columns left title">
+        Consejo comunal: <h2><%=@c.nombrec%></h2>
+	</div>
+
+</div>
+
+<div class="row">
+	<div class="large-12 columns subpage">
+		<label>Direcciòn: </label> <span><%=@c.direccion%></span>
+		<label>Vocero: </label> <span><%=@c.vocero%></span>
+		<label>Correo: </label> <span><%=@c.correo%></span>
+		<label>Telefono: </label> <span><%=@c.telefono%></span>
+	</div>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<%=link_to "Editar",edit_comunal_path(@c.id),{:class => "large-3 button  right", :style => "margin:0px;"}%>
+			 <%=link_to "Salir",home_path, {:class => "large-3 button  right"}%>
+			
+		</div>
+	</div>
+
+</div>
+
+
+
+</div>
+</div>

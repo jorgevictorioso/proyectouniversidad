@@ -1,0 +1,49 @@
+<%=form_for @necesidades, :html => {:class => "custom"} do |x|%>
+
+<div class="row">
+	<div class="large-6 columns left">
+		<label>Categoria</label>
+		<%=x.select :categoria, [["Academico"],["Cultural"],["Deporte"],["Infrestuctura"],["Social"],["Servicios Publicos"]], {:prompt => "seleccione una categoria"},{:required => true}%>
+
+
+	</div>
+
+		<div class="large-6 columns left">
+		<label>Prioridad</label>
+		<%=x.select :prioridad, [["Alta"],["Media"],["Baja"]], {:prompt => "seleccione una prioridad"},{:required => true}%>
+
+
+	</div>
+
+
+
+</div>
+	<div class="row">
+
+		<div class="large-6 columns left">
+			<label>Subir PDF</label>
+			<%=x.file_field :file_ext, :required => true %>
+
+		</div>
+			<div class="large-6 columns left">
+			<label>Descripciòn</label>
+			<%=x.text_area :description, :style => "height:200px;"%>
+		
+		</div>
+
+
+
+	</div>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<%=x.submit @title, :class => "button right", :style => "margin:1px;"%>
+			<%=link_to "Salir",home_path, {:class => "button right", :style => "margin:1px;"}%>
+		</div>
+
+	</div>
+
+
+
+
+<%end%>

@@ -1,0 +1,50 @@
+
+<fieldset class="">
+    <legend>
+         <h3>Sistema</h3>
+    </legend>
+    <%=form_for :login, :url => {:action => "create"}, :html => {:class => "custom login"} do |x|%>
+    <div class="row">
+        <div class="large-6 large-centered columns name-field">
+            <label>
+               Usuario
+            </label>
+            <%=x.text_field :username, :placeholder => "Escribe nombre de usuario"%>
+        </div>
+    </div>
+
+     <div class="row">
+        <div class="large-6 large-centered columns">
+            <label>
+                contraseña
+            </label>
+            <%=x.password_field :password, :class => "input", :placeholder => "Escriba contraseña"%>
+
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="large-6 columns large-centered">
+            <%=x.submit "Entrar", {:class => "medium button"}%> 
+            <%=link_to "Salir",home_path, {:class => "button back"}%>
+
+        </div>
+       
+
+    </div>
+    <div class="row">
+    <div class="large-9 columns">
+    <br>
+    <%=link_to "¿Olvide contraseña?",olvide_path,{:class => "right"}%>    
+    </div>
+        
+    </div>
+
+
+
+
+
+    <%end%>
+</fieldset>

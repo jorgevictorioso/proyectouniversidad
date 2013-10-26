@@ -1,0 +1,62 @@
+<%= form_for @grupos, :html => {:class => "custom"} do |x|%>
+
+<%if params[:nombre].blank?%>
+<div class="row">
+	<div class="large-12 columns">
+		<label>Nombre Lider Grupo</label>
+			<%=x.text_field :nombre%>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-12 columns">
+		<label>Cedula lider del grupo</label>
+			<%=x.text_field :ci%>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-4 columns">
+		<label>Cedula del profesor</label>
+			<input type="text" id="cedula_profesor" name="cedula_profesor" value="<%=get_name_profesor_id(@grupos.profesore_id) %>" required>
+	</div>
+
+	<div class="small-8 columns left">
+	<label>&nbsp;</label>
+
+		<input type="text" disabled value="" style="margin-left:-20px;" id="nombre_profesor">
+		
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-12 columns">
+		<label>Instituciòn</label>
+			<%=x.collection_select :institucione_id, Institucione.all, :id,:nombre%>
+	</div>
+</div>
+
+<%else%>
+
+
+			<input type="hidden" id="cedula_profesor" name="cedula_profesor" value="<%=get_name_profesor_id(@grupos.profesore_id)%>">
+
+
+
+<div class="row">
+	<%=x.hidden_field :institucione_id%>
+	<div class="large-12 columns">
+		<label>Nombre del proyecto</label>
+			<%=x.text_field :nombrep%>
+	</div>
+</div>
+
+<%end%>
+
+<div class="row">
+	<div class="large-12 columns">
+			<%=x.submit @__title, :class => "large-12 button"%>
+	</div>
+</div>
+
+<%end%>
