@@ -8,7 +8,7 @@ class ApiController < ApplicationController
   end
 
   def alumno
-    if request.ip=="192.168.0.107"
+    if Security.find_by(ip: request.ip).present?
       @a = Alumno.where(:cedula => params[:id])
     else
       render :text => "Usted no tiene acceso" and return

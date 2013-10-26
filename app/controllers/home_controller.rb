@@ -7,6 +7,11 @@ class HomeController < ApplicationController
   	trueredirectpowersession(1,home_comunal_path)
     trueredirectpowersession(2,home_alumno_path)
   	trueredirectpowersession(3,home_profesor_path)
+    trueredirectpowersession(4,home_admin_path)
+  end
+
+  def admin
+    falseredirectpowersession(4,home_path)
   end
 
   def comunal

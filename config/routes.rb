@@ -1,4 +1,6 @@
 Projectcomunal::Application.routes.draw do
+  resources :securities
+
   resources :alumnos
 
   get "grupos/index"
@@ -10,6 +12,7 @@ Projectcomunal::Application.routes.draw do
   get "/inicio" => "home#index", :as => "home"
   get "/comunal" => "home#comunal", :as => "home_comunal"
   get "/profesor" => "home#profesor", :as => "home_profesor"
+  get "/admin" => "home#admin", :as => "home_admin"
   get "/alumno" => "home#alumno", :as => "home_alumno"
   get "/elegir/:grupo/:id" => "grupos#elegir", :as => "elegir_proyecto"
 

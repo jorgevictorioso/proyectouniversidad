@@ -1,0 +1,29 @@
+
+
+<table>
+  <thead>
+    <tr>
+      <th width="50%">Descrption</th>
+      <th width="60%">Ip</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @securities.each do |security| %>
+      <tr>
+        <td><%= security.nombre %></td>
+        <td><%= security.ip %></td>
+        <td><%= link_to 'Mostrar', security %></td>
+        <td><%= link_to 'Editar', edit_security_path(security) %></td>
+        <td><%= link_to 'Eliminar', security, method: :delete, data: { confirm: '¿Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo', new_security_path, :class => "button" %>
